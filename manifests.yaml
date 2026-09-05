@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: telemetry-ingestor
+spec:
+  containers:
+  - name: ingestor
+    image: logitrack/telemetry:v1
+    env:
+    - name: AZURE_STORAGE_CONNECTION_KEY
+      value: "DefaultEndpointsProtocol=https;AccountName=logitracksa;AccountKey=SuperSecretAzureKey9911==;EndpointSuffix=core.windows.net"
+    - name: GPS_API_MASTER_TOKEN
+      value: "Bearer gps_tok_prod_88371920"
